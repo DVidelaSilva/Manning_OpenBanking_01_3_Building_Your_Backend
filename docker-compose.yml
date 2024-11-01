@@ -10,7 +10,6 @@ services:
       MYSQL_USERNAME: ${SPRING_DATASOURCE_USERNAME}
       MYSQL_ROOT_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
       MYSQL_DATABASE: ${SPRING_DATASOURCE_DB}                           # Nombre de usuario (opcional)
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes" 
     ports:
       - "3306:3306"  # Mapea el puerto 3306 del contenedor al puerto 3306 del host
     volumes:
