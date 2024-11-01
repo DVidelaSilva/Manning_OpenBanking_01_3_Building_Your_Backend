@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    command: --default-authentication-plugin=caching_sha2_password
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      MYSQL_ROOT_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+      MYSQL_DATABASE: ${SPRING_DATASOURCE_DB}                           # Nombre de usuario (opcional)
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes" 
+    ports:
+      - "3306:3306"  # Mapea el puerto 3306 del contenedor al puerto 3306 del host
+    volumes:
+      - mysql_data:/var/lib/mysql  # Monta los datos de MySQL en un volumen para persistencia
+
+
+volumes:
+  mysql_data:
+
