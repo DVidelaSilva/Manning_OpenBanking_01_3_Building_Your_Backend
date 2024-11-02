@@ -7,9 +7,9 @@ services:
     container_name: mysql_container
     restart: always
     environment:
-      MYSQL_USERNAME: ${SPRING_DATASOURCE_USERNAME}
-      MYSQL_ROOT_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
-      MYSQL_DATABASE: ${SPRING_DATASOURCE_DB}                           # Nombre de usuario (opcional)
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: open_banking_manning                          # Nombre de usuario (opcional)
     ports:
       - "3306:3306"  # Mapea el puerto 3306 del contenedor al puerto 3306 del host
     volumes:
